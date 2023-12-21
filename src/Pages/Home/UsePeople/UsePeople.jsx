@@ -1,7 +1,8 @@
 import { BsPersonWorkspace, BsPersonFillGear,  BsPersonFillCheck, BsPersonFillDash, BsPersonFillAdd, BsPersonFillLock } from "react-icons/bs";
 const UsePeople = () => {
   return (
-    <div className="text-center mb-16 mt-8">
+    <div data-aos="zoom-in-down"
+    data-aos-duration="3000" className="text-center mb-16 mt-8">
       <h2 className="md:text-3xl  font-bold text-xl">
         Perfect Fit For <span className="text-[#434343]">Every Team</span>
       </h2>
