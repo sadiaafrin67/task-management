@@ -7,7 +7,7 @@ const Aboutus = () => {
   <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
     <div className="mx-auto mb-8 max-w-screen-sm lg:mb-16">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our team</h2>
-      <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Welcome to <span className="text-[#39569c] font-bold">SurveyNest</span>, where we transform opinions into insights! Our platform empowers users to create, share, and participate in surveys that matter. We believe in the power of collective voices, making every opinion count.</p>
+      <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Meet the Team Behind <span className="text-[#434343] font-bold">Todolist</span>- Passionate individuals driven by a common goal – to simplify your task management experience. At Todolist, we believe in the power of efficiency and organization. Our diverse team combines creativity and technical expertise to bring you a seamless task management solution. Discover the faces behind your favorite productivity platform and join us on a journey to make every day more productive, one task at a time.</p>
     </div> 
     <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <div className="text-center text-gray-500 dark:text-gray-400">

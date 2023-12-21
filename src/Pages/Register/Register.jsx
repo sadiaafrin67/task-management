@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
 
+    const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPass, setShowPass] = useState(false)
     const [showPassTwo, setShowPassTwo] = useState(false)
@@ -40,18 +42,18 @@ const Register = () => {
         }
     
     
-        // createUser(email, password) 
-        // .then(result => {
-        //   const user = result.user;
-        //   console.log(user);
-        //   e.target.reset()
+        createUser(email, password) 
+        .then(result => {
+          const user = result.user;
+          console.log(user);
+          e.target.reset()
           
-        //   swal("Signup", "You are successfully signed up", "success");
-        //   navigate('/')
-        // })
-        // .catch(error => {
-        //   console.log(error);
-        // })
+          swal("Signup", "You are successfully signed up", "success");
+          navigate('/')
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
 
   return (

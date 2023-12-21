@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
 
+    const {  SignInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
@@ -17,24 +19,50 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
     
-        // SignInUser(email, password)
-        //   .then((result) => {
-        //     const user = result.user;
-        //     console.log(user);
+        SignInUser(email, password)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
            
     
             
     
-        //     e.target.reset();
+            e.target.reset();
     
-        //     swal("Signin", "You are successfully signed in", "success");
-        //     navigate(location?.state ? location.state : '/')
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //     swal("Signin failed", "Invalid email or password", "error");
-        //   });
+            swal("Signin", "You are successfully signed in", "success");
+            navigate(location?.state ? location.state : '/')
+          })
+          .catch((error) => {
+            console.log(error);
+            swal("Signin failed", "Invalid email or password", "error");
+          });
       };
+
+      const handleGoogleSignIn = () => {
+        signInWithGoogle()
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+    
+    
+            navigate(location?.state ? location.state : '/')
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+      const handleGithubSignIn = () => {
+        signInWithGithub()
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+            navigate(location?.state ? location.state : '/')
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     
 
 
@@ -97,11 +125,11 @@ const Login = () => {
   
               <div className="mx-auto md:flex md:justify-evenly mb-6">
               <p><button 
-            //   onClick={handleGoogleSignIn}  
+              onClick={handleGoogleSignIn}  
               className="btn btn-grad ">Continue With Google</button></p>
   
               <p><button 
-            //   onClick={handleGithubSignIn}  
+              onClick={handleGithubSignIn}  
               className="btn btn-grad">Continue With Github</button></p>
               </div>
   
