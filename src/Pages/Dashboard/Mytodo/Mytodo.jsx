@@ -46,7 +46,19 @@ const Mytodo = () => {
 
     return (
         <div>
-            <h2>My Todo</h2>
+            <h2 className="text-center mb-10 text-2xl text-[#434343] font-bold">My TodoList</h2>
+
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
+                <div className="">
+                    <h2 className="text-xl font-semibold border text-center border-gray-400 p-3 text-gray-600">To-do List</h2>
+                </div>
+                <div>
+                    <h2 className="text-xl font-semibold border text-center border-gray-400 p-3 text-gray-600">On Going</h2>
+                </div>
+                <div>
+                    <h2 className="text-xl font-semibold border text-center border-gray-400 p-3 text-gray-600">Completed</h2>
+                </div>
+            </div>
             {/* <div className="flex w-full gap-3 justify-center ">
       <div>
         <h1>TODOS</h1>
