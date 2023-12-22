@@ -16,6 +16,7 @@ import TaskManagement from './Pages/Dashboard/TaskManagement/TaskManagement';
 import Mytodo from './Pages/Dashboard/Mytodo/Mytodo';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoute from './Router/PrivateRoute';
+import UpdateTask from './Pages/Dashboard/TaskManagement/UpdateTask';
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: 'manage',
         element: <TaskManagement></TaskManagement>
+      },
+      {
+        path: 'update/:id',
+        element: <UpdateTask></UpdateTask>,
+        loader: ({ params }) => fetch(`https://task-management-server-neon.vercel.app/tasks/${params.id}`)
       },
       {
         path: 'mytask',

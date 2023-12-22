@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { useContext } from "react";
+
 const Banner = () => {
+
+  const {user} = useContext(AuthContext)
+
   return (
     <div >
       <div 
@@ -20,9 +27,9 @@ const Banner = () => {
               task manager and to-do list app.
             </p>
             <div className="mx-auto ml-20  md:ml-28 lg:ml-28">
-              <button className="btn  btn-grad rounded border-none text-white">
+             <Link to={user && user.email ? '/dashboard' : '/login'}><button className="btn  btn-grad rounded border-none text-white">
                 Let's Explore
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>
