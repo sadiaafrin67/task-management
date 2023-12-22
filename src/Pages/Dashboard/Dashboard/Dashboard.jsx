@@ -30,15 +30,21 @@ const Dashboard = () => {
                   <img
                     src={`${user?.photoURL ? user?.photoURL : defaultImg}`}
                   />
+                  
                 </div>
               </label>
+              
 
               
             </div>
           </div>
         )}
           </div>
-            <h2 className="text-center font-bold py-4">My Dashboard</h2>
+          <div className="text-center">
+              <p className="font-medium text-sm">{user?.displayName}</p>
+                  <p className="text-xs font-medium">{user?.email}</p>
+              </div>
+            <h2 className="text-center font-bold py-4">Welcome to your dashboard</h2>
             <li>
               <NavLink to="/dashboard/todo"><MdModeEditOutline></MdModeEditOutline>Create My Todo</NavLink>
             </li>
